@@ -3,10 +3,10 @@
 
 ## Projects
 
-| # | Project | Description | Status |
-|---|---------|-------------|--------|
-| 01 | [Calculators](projects/01-calculators/) | Four implementations exploring different approaches to calculations, including functions and object-oriented programming | Completed |
-| 02 | [String Methods Explorer](projects/02-string-methods/) | Interactive exploration of Python string methods and text normalization | In progress |
+| # | Project | Description |
+|---|---------|-------------|
+| 01 | [Calculators](projects/01-calculators/) | Four implementations exploring different approaches to calculations, including functions and object-oriented programming |
+| 02 | [String Methods Explorer](projects/02-string-methods/) | Interactive exploration of Python string methods and text normalization |
 
 ### 01. Calculators
 
@@ -16,8 +16,6 @@ Four implementations demonstrating different programming approaches:
 2. Calculator with a separate function for each operation.
 3. Calculator using a single function for multiple operations.
 4. Work-life balance calculator demonstrating classes, inheritance, and object-oriented programming.
-
-**Topics:** basic syntax, arithmetic operations, functions, classes, inheritance, conditional statements.
 
 ### 02. String Methods Explorer
 
@@ -30,5 +28,3 @@ The project is divided into five levels:
 3. **Splitting and Joining** — `split()`, `join()`.
 4. **String Validation and Cleaning** — `isdigit()`, `isalpha()`, `strip()`.
 5. **Text Normalization** — a custom `normalize()` function combining several string operations.
-
-**Topics:** built-in string methods, dictionaries, functions as values, user input, conditional statements, string manipulation, and text processing.
