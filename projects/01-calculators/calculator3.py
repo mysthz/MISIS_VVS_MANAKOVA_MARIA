@@ -10,6 +10,8 @@ def operations(a, b, operation):
             print(f'Результат {a / b}')
         else:
             print("На ноль делить нельзя")
+    else:
+        print("Ошибка")
 while True:
     a = float(input("Введите первое число: "))
     oper = input("Введите операцию (+, -, *, /): ")

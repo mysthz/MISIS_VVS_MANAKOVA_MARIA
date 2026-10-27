@@ -28,23 +28,22 @@ elif a =='2':
           "replace - заменить все символы 'a' на символы 'б'\n"
           "count - посчитать количество элементов в строке")
     c = input("Choose the method: (find / replace / count): ").strip().lower()
-    if c in methods:
-        if c == 'find':
-            print(f'Позиция первого входа подстроки "круто" - {methods[c]('Ботать это круто, очень круто', 'круто')}')
-            b = input("Write the stroke ")
-            b1 = input("Введите подстроку ")
-            print(methods[c](b, b1))
-        elif c == 'replace':
-            print(f'Замена подстроки "круто" на "супер" - {methods[c]('Ботать это круто, очень круто', "круто", 'супер')}')
-            b = input("Write the stroke ")
-            b1 = input("Введите подстроку ")
-            b2 = input('На какую подстроку заменить? ')
-            print(methods[c](b, b1, b2))
-        elif c == 'count':
-            print(f'Количество букв "О" - {methods[c]('Ботать это круто, очень круто', "о")}')
-            b = input("Write the stroke ")
-            b1 = input("Введите подстроку ")
-            print(methods[c](b, b1))
+    if c == 'find':
+        print(f'Позиция первого входа подстроки "круто" - {methods[c]('Ботать это круто, очень круто', 'круто')}')
+        b = input("Write the stroke ")
+        b1 = input("Введите подстроку ")
+        print(methods[c](b, b1))
+    elif c == 'replace':
+        print(f'Замена подстроки "круто" на "супер" - {methods[c]('Ботать это круто, очень круто', "круто", 'супер')}')
+        b = input("Write the stroke ")
+        b1 = input("Введите подстроку ")
+        b2 = input('На какую подстроку заменить? ')
+        print(methods[c](b, b1, b2))
+    elif c == 'count':
+        print(f'Количество букв "О" - {methods[c]('Ботать это круто, очень круто', "о")}')
+        b = input("Write the stroke ")
+        b1 = input("Введите подстроку ")
+        print(methods[c](b, b1))
 
 elif a == '3':
     methods = {
