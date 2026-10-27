@@ -31,7 +31,7 @@ The project is divided into five levels:
 4. **String Validation and Cleaning** — `isdigit()`, `isalpha()`, `strip()`.
 5. **Text Normalization** — a custom `normalize()` function combining several string operations.
 
-### 03. Maze Adventure
+### 03. Maze Game
 
 A console-based RPG game written in Python. The player explores a maze, visits different rooms, collects items, fights monsters, and tries to find the exit.
 
