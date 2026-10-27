@@ -1,12 +1,14 @@
 # MISIS_VVS_MANAKOVA_MARIA
-Учебный репозиторий для курса ВВС в МИСИС
+
+Учебный репозиторий для курса ВВС в МИСИС.
 
 ## Projects
 
 | # | Project | Description |
-|---|---------|-------------|
-| 01 | [Calculators](projects/01-calculators/) | Four implementations exploring different approaches to calculations, including functions and object-oriented programming |
-| 02 | [String Methods Explorer](projects/02-string-methods/) | Interactive exploration of Python string methods and text normalization |
+|---|---|---|
+| 01 | [Calculators](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/01-calculators) | Four implementations exploring different approaches to calculations, including functions and object-oriented programming. |
+| 02 | [String Methods Explorer](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/02-string-methods) | Interactive exploration of Python string methods and text normalization. |
+| 03 | [Maze Game](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/03-maze-game) | A console-based RPG game featuring maze exploration, inventory management, traps, monsters, and random events. |
 
 ### 01. Calculators
 
@@ -28,3 +30,28 @@ The project is divided into five levels:
 3. **Splitting and Joining** — `split()`, `join()`.
 4. **String Validation and Cleaning** — `isdigit()`, `isalpha()`, `strip()`.
 5. **Text Normalization** — a custom `normalize()` function combining several string operations.
+
+### 03. Maze Adventure
+
+A console-based RPG game written in Python. The player explores a maze, visits different rooms, collects items, fights monsters, and tries to find the exit.
+
+The main objective is to find a key and escape from the maze while keeping the player's health above zero.
+
+**Main features:**
+
+- **Maze exploration** — movement through a two-dimensional maze with coordinates and a map displaying visited rooms.
+- **Player system** — health points (HP), inventory, key collection, and character status.
+- **Room interactions** — empty rooms, traps, chests, portals, monsters, keys, and exits.
+- **Inventory management** — collecting and using weapons, armor, and healing potions.
+- **Combat system** — fighting monsters with a weapon or escaping from encounters.
+- **Equipment mechanics** — weapons allow the player to attack, while armor reduces incoming damage.
+- **Random events** — chests contain randomly selected items, and portals teleport the player to random rooms.
+- **Game conditions** — winning by finding the key and reaching the exit, or losing when the player's HP reaches zero.
+
+**Project structure:**
+
+- `main.py` — main game loop and interaction between game components.
+- `maze.py` — maze generation, player movement, and map display.
+- `player.py` — player class and character attributes.
+- `rooms.py` — room classes and their interactions.
+- `inventory.py` — inventory management.
