@@ -28,6 +28,7 @@ print("""
    """)
 
 
+
 player = Player(0, 0)
 player.visited.append([player.x, player.y])
 
