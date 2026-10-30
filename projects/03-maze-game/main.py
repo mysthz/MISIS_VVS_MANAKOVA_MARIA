@@ -9,6 +9,28 @@ player.visited.append([player.x, player.y])
 
 display_maze(player.x, player.y, player.visited)
 
+print("""
+   Available commands:
+
+   MOVEMENT:
+   up    - move up
+   down  - move down
+   left  - move left
+   right - move right
+
+   INVENTORY:
+   inventory  - show inventory
+   use potion - restore 30 HP
+   health - show current HP
+
+   OTHER:
+   help - show available commands
+
+   During monster encounter:
+   attack - attack the monster
+   run    - escape from the monster
+   """)
+
 while player.is_alive:
     command = input("Where would you like to go? ").lower()
 
