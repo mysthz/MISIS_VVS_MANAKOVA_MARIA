@@ -4,10 +4,6 @@ from rooms import trap1, trap2, trap3
 from rooms import monster
 from rooms import chest1, chest2, chest3, portal
 
-player = Player(0, 0)
-player.visited.append([player.x, player.y])
-
-display_maze(player.x, player.y, player.visited)
 
 print("""
    Available commands:
@@ -30,6 +26,13 @@ print("""
    attack - attack the monster
    run    - escape from the monster
    """)
+
+
+player = Player(0, 0)
+player.visited.append([player.x, player.y])
+
+display_maze(player.x, player.y, player.visited)
+
 
 while player.is_alive:
     command = input("Where would you like to go? ").lower()
