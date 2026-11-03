@@ -175,3 +175,75 @@ print(f'После обработки: строк — {df.shape[0]}, столб�
 30. нет тк после заполнения пропусков становится больше пассажиров с возрастом, равным медиане и из-за этого меняется частота этого значения и общее распределение возрастов
 """
 
+#Часть 4
+# Задание 31. Общий процент выживших
+survived_percent = np.sum(df['Survived'] == 1) / len(df) * 100
+
+
+# Задание 32. Процент выживших отдельно среди мужчин и женщин
+female_percent = np.sum((df['Survived'] == 1) & (df['Sex'] == 'female')) / np.sum(df['Sex'] == 'female') * 100
+male_percent = np.sum((df['Survived'] == 1) & (df['Sex'] == 'male')) / np.sum(df['Sex'] == 'male') * 100
+
+
+# Задание 33. Средний возраст мужчин и женщин
+average_age_female = np.mean(df[df['Sex'] == 'female']['Age'])
+average_age_male = np.mean(df[df['Sex'] == 'male']['Age'])
+
+
+# Задание 34. Средний  возраст выживших и погибших отдельно для мужчин и женщин.
+average_age_survived_female = np.mean(df[(df['Sex']=='female') & (df['Survived']==1)]['Age'])
+average_age_survived_male = np.mean(df[(df['Sex']=='male') & (df['Survived']==1)]['Age'])
+average_age_notsurvived_female = np.mean(df[(df['Sex']=='female') & (df['Survived']==0)]['Age'])
+average_age_notsurvived_male = np.mean(df[(df['Sex']=='male') & (df['Survived']==0)]['Age'])
+
+
+# Задание 35. Минимальная, максимальная и средная стоимость билета
+max_ticket_cost = np.nanmax(df['Fare'])
+min_ticket_cost = np.nanmin(df['Fare'])
+average_ticket_cost = np.nanmean(df['Fare'])
+
+
+# Задание 36. Cтандартное отклонение возраста
+standart_age_deviation = np.nanstd(df['Age'])
+
+
+#Таблица
+# Результаты анализа с помощью NumPy
+data_numpy = {
+    'Показатель': [
+        'Общий процент выживших',
+        'Процент выживших женщин',
+        'Процент выживших мужчин',
+        'Средний возраст женщин',
+        'Средний возраст мужчин',
+        'Средний возраст выживших женщин',
+        'Средний возраст погибших женщин',
+        'Средний возраст выживших мужчин',
+        'Средний возраст погибших мужчин',
+        'Минимальная стоимость билета',
+        'Максимальная стоимость билета',
+        'Средняя стоимость билета',
+        'Стандартное отклонение возраста'
+    ],
+    'Значение': [
+        survived_percent,
+        female_percent,
+        male_percent,
+        average_age_female,
+        average_age_male,
+        average_age_survived_female,
+        average_age_notsurvived_female,
+        average_age_survived_male,
+        average_age_notsurvived_male,
+        min_ticket_cost,
+        max_ticket_cost,
+        average_ticket_cost,
+        standart_age_deviation
+    ]
+}
+
+print('\nРезультаты анализа:')
+print(pd.DataFrame(data_numpy))
+
+
+#Часть 5
