@@ -247,3 +247,4 @@ print(pd.DataFrame(data_numpy))
 
 
 #Часть 5
+
