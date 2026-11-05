@@ -198,7 +198,7 @@ print(f'После обработки: строк — {df.shape[0]}, столб�
 
 
 # Часть 4
-
+print('Часть 4')
 # Задание 31. Общий процент выживших
 survived_percent = np.sum(df['Survived'] == 1) / len(df) * 100
 
@@ -276,7 +276,7 @@ print(pd.DataFrame(numpy_statistics))
 
 # Часть 5
 # Фильтрация данных
-
+print('Часть 5')
 # Задание 1. Мужчины старше 30 лет, путешествовавшие первым классом
 first_class_men_over_30 = (df['Sex'] == 'male') & (df['Age'] > 30) & (df['Pclass'] == 1)
 print(f'\nКоличество мужчин старше 30 лет, путешествовавших первым классом: {np.sum(first_class_men_over_30)}')
@@ -293,14 +293,12 @@ count_third_class_above_average_fare = np.sum(
     (df['Pclass'] == 3) & ((df['Fare']) > (np.nanmean(df[df['Pclass'] == 3]['Fare'])))
 )
 print(f'\nКоличество пассажиров третьего класса, стоимость билета которых выше средней стоимости билета в этом классе: {count_third_class_above_average_fare}')
-print(df[(df['Pclass'] == 3) & ((df['Fare']) > (np.nanmean(df[df['Pclass'] == 3]['Fare'])))])
 
 # Задание 4. Пассажиры от 20 до 40 лет включительно, отправившиеся из порта S
 count_passengers_age_20_to_40_from_S = np.sum(
     ((df['Age'] >= 20) & (df['Age'] <= 40)) & (df['Embarked'] == 'S')
 )
 print(f'\nКоличество пассажиров от 20 до 40 лет включительно, отправившихся из порта S: {count_passengers_age_20_to_40_from_S}')
-print(df[(df['Age'] >= 20) & (df['Age'] <= 40) & (df['Embarked'] == 'S')])
 
 # Контрольный вопрос
 # Логическое И (&) означает, что должны выполняться все условия.
@@ -308,6 +306,7 @@ print(df[(df['Age'] >= 20) & (df['Age'] <= 40) & (df['Embarked'] == 'S')])
 # одного из условий.
 
 # Часть 6
+print('Часть 6')
 
 # Задание 37. Группировка по классу (Pclass) и полу (Sex)
 passengers_by_class_and_sex = df.groupby(['Pclass', 'Sex'])
@@ -358,6 +357,7 @@ print(f'\nНаибольшая доля выживших в классе {class_
 
 
 # Часть 7
+print('Часть 7')
 
 # Задание 40. Сохранение обработанного DataFrame
 df.to_csv('titanic_processed.csv', index=False)
