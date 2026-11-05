@@ -100,6 +100,10 @@ for class_number, value in passengers_by_class.items():
 print('\nУникальные значения Embarked:')
 print('Количество уникальных значений:', df['Embarked'].nunique())
 
+# Контрольный вопрос
+# Pclass содержит числа, но обозначает категории пассажиров:
+# первый, второй и третий класс. Поэтому его рассматривают
+# как категориальный признак.
 
 # Часть 3
 print('\nчасть 3')
@@ -131,7 +135,7 @@ age_median_before = median_value('Age')
 age_min_before = min_value('Age')
 age_max_before = max_value('Age')
 age_std_before = standard_deviation('Age')
-age_count_before = 418 - df['Age'].isna().sum()
+age_count_before = len(df) - df['Age'].isna().sum()
 
 
 # Задание 20. Заполнение пропусков
@@ -225,6 +229,10 @@ average_ticket_cost = np.nanmean(df['Fare'])
 # Задание 36. Стандартное отклонение возраста
 standard_age_deviation = np.nanstd(df['Age'])
 
+# Контрольный вопрос
+# По результатам анализа доля выживших женщин оказалась выше,
+# чем мужчин. Также были рассчитаны различия в среднем возрасте
+# мужчин и женщин, а также среди выживших и погибших.
 
 # Таблица
 # Результаты анализа с помощью NumPy
@@ -284,14 +292,19 @@ count_third_class_above_average_fare = np.sum(
     (df['Pclass'] == 3) & ((df['Fare']) > (np.nanmean(df[df['Pclass'] == 3]['Fare'])))
 )
 print(f'\nКоличество пассажиров третьего класса, стоимость билета которых выше средней стоимости билета в этом классе: {count_third_class_above_average_fare}')
-
+print(df[(df['Pclass'] == 3) & ((df['Fare']) > (np.nanmean(df[df['Pclass'] == 3]['Fare'])))])
 
 # Задание 4. Пассажиры от 20 до 40 лет включительно, отправившиеся из порта S
 count_passengers_age_20_to_40_from_S = np.sum(
     ((df['Age'] >= 20) & (df['Age'] <= 40)) & (df['Embarked'] == 'S')
 )
 print(f'\nКоличество пассажиров от 20 до 40 лет включительно, отправившихся из порта S: {count_passengers_age_20_to_40_from_S}')
+print(df[(df['Age'] >= 20) & (df['Age'] <= 40) & (df['Embarked'] == 'S')])
 
+# Контрольный вопрос
+# Логическое И (&) означает, что должны выполняться все условия.
+# Логическое ИЛИ (|) означает, что достаточно выполнения хотя бы
+# одного из условий.
 
 # Часть 6
 
@@ -382,6 +395,8 @@ print(processed_df.columns)
 print('\nКоличество пропусков:')
 print(processed_df.isna().sum())
 
+print('\nПроверка совпадения таблиц:')
+print(processed_df.equals(df))
 
 # Часть 8. Выводы по работе
 print('\nЧасть 8. Выводы по работе')
