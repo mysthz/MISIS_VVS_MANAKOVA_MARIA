@@ -9,7 +9,7 @@
 | 01 | [Calculators](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/01-calculators) | Four implementations exploring different approaches to calculations, including functions and object-oriented programming. |
 | 02 | [String Methods Explorer](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/02-string-methods) | Interactive exploration of Python string methods and text normalization. |
 | 03 | [Maze Game](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/03-maze-game) | A console-based RPG game featuring maze exploration, inventory management, traps, monsters, and random events. |
-| 04 | Titanic Data Analysis with Pandas and NumPy | Data cleaning, filtering, grouping, and statistical analysis of the Titanic dataset using Pandas and NumPy.
+| 04 | [Titanic Data Analysis with Pandas and NumPy](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/04-titanic) | Data cleaning, filtering, grouping, and statistical analysis of the Titanic dataset using Pandas and NumPy.
 
 ### 01. Calculators
 
