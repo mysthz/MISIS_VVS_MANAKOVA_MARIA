@@ -83,7 +83,3 @@ The project uses the Titanic dataset to explore passenger information, handle mi
 
 - `titanic_processed.csv` — cleaned and processed dataset.
 - `titanic_statistics.csv` — grouped passenger statistics by class and gender.
-
-### Learning outcomes
-
-This project demonstrates practical skills in working with tabular data, handling missing values, applying logical conditions, grouping datasets, and performing statistical analysis using Pandas and NumPy.
