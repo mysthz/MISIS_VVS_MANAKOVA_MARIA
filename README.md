@@ -124,8 +124,8 @@ The applications demonstrate the use of the following graphical interface compon
 
 ### PyQt6
 
-![My Habits - PyQt6](images/Снимок%20экрана%202026-11-16%20в%2012.30.07.png)
+![My Habits - PyQt6](projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.30.07.png)
 
 ### Tkinter
 
-![My Habits - Tkinter](images/Снимок%20экрана%202026-11-16%20в%2012.32.04.png)
+![My Habits - Tkinter](projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.32.04.png)
