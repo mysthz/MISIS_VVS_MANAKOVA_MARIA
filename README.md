@@ -120,3 +120,12 @@ The applications demonstrate the use of the following graphical interface compon
 9. **Dialog Windows** — displaying warnings, information messages, and confirmation dialogs.
 10. **Layout Management** — arranging interface elements using layout managers.
 
+### Screenshots
+
+**PyQt6**
+
+![My Habits - PyQt6]([images/pyqt6-main.png](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/blob/main/projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.30.07.png))
+
+**Tkinter**
+
+![My Habits - Tkinter]([images/pyqt6-interface.png](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/blob/main/projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.32.04.png))
