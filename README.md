@@ -128,4 +128,4 @@ The applications demonstrate the use of the following graphical interface compon
 
 **Tkinter**
 
-![My Habits - Tkinter]((https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/blob/main/projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.32.04.png))
+![Снимок%20экрана%202026-11-16%20в%2012.32.04.png]((https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/blob/main/projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.32.04.png))
