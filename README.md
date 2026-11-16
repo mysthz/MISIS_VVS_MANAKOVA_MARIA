@@ -124,7 +124,7 @@ The applications demonstrate the use of the following graphical interface compon
 
 **PyQt6**
 
-![My Habits - PyQt6]([[Снимок%20экрана%202026-11-16%20в%2012.30.07.png](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/blob/main/projects/05-habit-tracker/images/Снимок%20экрана%202026-11-16%20в%2012.30.07.png)]))
+![My Habits - PyQt6]([Снимок%20экрана%202026-11-16%20в%2012.30.07.png])
 
 **Tkinter**
 
