@@ -17,6 +17,10 @@ window.resizable(False, False)
 
 habits = []
 
+# Переменная для фильтрации
+
+show_only_active = tk.BooleanVar(value=False)
+
 
 # Функция добавления привычки
 
@@ -29,7 +33,7 @@ def add_habit():
 
     habits.append(name)
 
-    habit_list.insert(tk.END, name)
+    filter_habits()
 
     entry.delete(0, tk.END)
 
@@ -48,11 +52,9 @@ def mark_done():
     index = selected[0]
     name = habits[index]
 
-    habit_list.delete(index)
-    habit_list.insert(index, "✓ " + name)
-
     habits[index] = "✓ " + name
 
+    filter_habits()
     update_counter()
 
 
@@ -68,8 +70,8 @@ def delete_habit():
     index = selected[0]
 
     habits.pop(index)
-    habit_list.delete(index)
 
+    filter_habits()
     update_counter()
 
 
@@ -82,6 +84,18 @@ def update_counter():
     counter_label.config(
         text=f"Выполнено: {done} из {total}"
     )
+
+
+# Функция фильтрации привычек
+
+def filter_habits():
+    habit_list.delete(0, tk.END)
+
+    for habit in habits:
+        if show_only_active.get() and habit.startswith("✓"):
+            continue
+
+        habit_list.insert(tk.END, habit)
 
 
 # Заголовок
@@ -136,6 +150,19 @@ list_label = tk.Label(
     bg="#F4F5F7"
 )
 list_label.pack(pady=10)
+
+
+# Выбор параметров
+
+filter_checkbox = tk.Checkbutton(
+    window,
+    text="Показывать только невыполненные",
+    variable=show_only_active,
+    command=filter_habits,
+    font=("Arial", 10),
+    bg="#F4F5F7"
+)
+filter_checkbox.pack(pady=5)
 
 
 habit_list = tk.Listbox(

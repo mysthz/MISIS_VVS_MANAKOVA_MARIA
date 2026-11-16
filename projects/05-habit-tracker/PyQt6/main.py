@@ -37,6 +37,12 @@ class HabitTracker(QWidget):
         # Подпись списка
         self.list_label = QLabel("Мои привычки:")
 
+        # Чекбокс фильтрации
+        self.filter_checkbox = QCheckBox(
+            "Показывать только невыполненные"
+        )
+        self.filter_checkbox.toggled.connect(self.filter_habits)
+
         # Список привычек
         self.habit_list = QListWidget()
 
@@ -64,6 +70,7 @@ class HabitTracker(QWidget):
         layout.addWidget(self.entry)
         layout.addWidget(self.add_button)
         layout.addWidget(self.list_label)
+        layout.addWidget(self.filter_checkbox)
         layout.addWidget(self.habit_list)
         layout.addWidget(self.done_button)
         layout.addWidget(self.delete_button)
@@ -83,9 +90,10 @@ class HabitTracker(QWidget):
             return
 
         self.habits.append(name)
-        self.habit_list.addItem(name)
 
         self.entry.clear()
+
+        self.filter_habits()
         self.update_counter()
 
     def mark_done(self):
@@ -99,13 +107,12 @@ class HabitTracker(QWidget):
             )
             return
 
-        item = self.habit_list.item(selected)
         name = self.habits[selected]
 
         if not name.startswith("✓"):
             self.habits[selected] = "✓ " + name
-            item.setText("✓ " + name)
 
+        self.filter_habits()
         self.update_counter()
 
     def delete_habit(self):
@@ -120,8 +127,8 @@ class HabitTracker(QWidget):
             return
 
         self.habits.pop(selected)
-        self.habit_list.takeItem(selected)
 
+        self.filter_habits()
         self.update_counter()
 
     def update_counter(self):
@@ -131,6 +138,17 @@ class HabitTracker(QWidget):
         self.counter_label.setText(
             f"Выполнено: {done} из {total}"
         )
+
+    # Функция фильтрации привычек
+
+    def filter_habits(self):
+        self.habit_list.clear()
+
+        for habit in self.habits:
+            if self.filter_checkbox.isChecked() and habit.startswith("✓"):
+                continue
+
+            self.habit_list.addItem(habit)
 
 
 app = QApplication(sys.argv)
