@@ -10,7 +10,7 @@
 | 02 | [String Methods Explorer](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/02-string-methods) | Interactive exploration of Python string methods and text normalization. |
 | 03 | [Maze Game](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/03-maze-game) | A console-based RPG game featuring maze exploration, inventory management, traps, monsters, and random events. |
 | 04 | [Titanic Data Analysis with Pandas and NumPy](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/04-titanic) | Data cleaning, filtering, grouping, and statistical analysis of the Titanic dataset using Pandas and NumPy.
-
+| 05 | [Desktop Applications](https://github.com/mysthz/MISIS_VVS_MANAKOVA_MARIA/tree/main/projects/05-habit-tracker) | Two implementations of a simple Habit Tracker desktop application using Tkinter and PyQt6, demonstrating GUI development and event handling. |
 ### 01. Calculators
 
 Four implementations demonstrating different programming approaches:
@@ -83,3 +83,40 @@ The project uses the Titanic dataset to explore passenger information, handle mi
 
 - `titanic_processed.csv` — cleaned and processed dataset.
 - `titanic_statistics.csv` — grouped passenger statistics by class and gender.
+
+### 05. Desktop Applications
+
+A project focused on developing desktop applications in Python using two different GUI frameworks: **Tkinter** and **PyQt6**.
+
+The project features two implementations of a simple Habit Tracker application called **My Habits**. Both applications allow users to manage their daily habits through a graphical user interface.
+
+### Main features
+
+- **Habit Management** — adding new habits to a personal list.
+- **Habit Tracking** — marking habits as completed.
+- **Habit Deletion** — removing selected habits from the list.
+- **Progress Counter** — displaying the number of completed habits and the total number of habits.
+- **Input Validation** — checking that the habit name is not empty.
+- **Dialog Windows** — displaying informational messages and warnings.
+
+### Technologies
+
+- Python
+- Tkinter
+- PyQt6
+
+### GUI Components
+
+The applications demonstrate the use of the following graphical interface components and programming concepts:
+
+1. **Main Window** — creating and configuring the application window.
+2. **Labels** — displaying text and interface descriptions.
+3. **Input Fields** — entering habit names.
+4. **Buttons** — adding, completing, and deleting habits.
+5. **Selection Controls** — selecting interface options.
+6. **Output Display** — displaying the list of habits and progress information.
+7. **Event Handling** — processing user actions through event handlers and callback functions.
+8. **Input Validation** — checking user input before processing it.
+9. **Dialog Windows** — displaying warnings, information messages, and confirmation dialogs.
+10. **Layout Management** — arranging interface elements using layout managers.
+
