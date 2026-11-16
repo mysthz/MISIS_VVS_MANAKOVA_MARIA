@@ -28,7 +28,6 @@ class HabitTracker(QWidget):
 
         # Поле ввода
         self.entry = QLineEdit()
-        self.entry.setPlaceholderText("Например, читать 20 минут")
 
         # Кнопка добавления
         self.add_button = QPushButton("Добавить привычку")

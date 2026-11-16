@@ -88,7 +88,7 @@ def update_counter():
 
 title = tk.Label(
     window,
-    text="My Habits 🌱",
+    text="My Habits",
     font=("Arial", 24, "bold"),
     bg="#F4F5F7",
     fg="#333333"
