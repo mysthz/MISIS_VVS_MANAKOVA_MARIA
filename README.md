@@ -120,6 +120,25 @@ The application supports:
 - Deleting habits and their related category records.
 
 
+┌─────────────────────────┐
+│         habits          │
+├─────────────────────────┤
+│ PK  id        INTEGER   │
+│     name      TEXT      │
+│     completed INTEGER   │
+└────────────┬────────────┘
+             │
+             │ 1 : N
+             │
+┌────────────▼────────────┐
+│       categories        │
+├─────────────────────────┤
+│ PK  id        INTEGER   │
+│ FK  habit_id  INTEGER   │
+│     category  TEXT      │
+└─────────────────────────┘
+
+
 ### GUI Components
 
 The applications demonstrate the use of the following graphical interface components and programming concepts:
