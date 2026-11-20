@@ -120,23 +120,30 @@ The application supports:
 - Deleting habits and their related category records.
 
 
-┌─────────────────────────┐
-│         habits          │
-├─────────────────────────┤
-│ PK  id        INTEGER   │
-│     name      TEXT      │
-│     completed INTEGER   │
-└────────────┬────────────┘
-             │
-             │ 1 : N
-             │
-┌────────────▼────────────┐
-│       categories        │
-├─────────────────────────┤
-│ PK  id        INTEGER   │
-│ FK  habit_id  INTEGER   │
-│     category  TEXT      │
-└─────────────────────────┘
+
+### Database Schema
+
+The database consists of two related tables:
+
+```mermaid
+erDiagram
+    HABITS ||--o{ CATEGORIES : has
+
+    HABITS {
+        INTEGER id PK
+        TEXT name
+        INTEGER completed
+    }
+
+    CATEGORIES {
+        INTEGER id PK
+        INTEGER habit_id FK
+        TEXT category
+    }
+```
+
+**Relationship:** One habit can have multiple associated category records (one-to-many relationship).
+
 
 
 ### GUI Components
