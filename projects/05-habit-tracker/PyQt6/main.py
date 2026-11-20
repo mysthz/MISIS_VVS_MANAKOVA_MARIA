@@ -1,6 +1,7 @@
 
 import sys
 from PyQt6.QtWidgets import *
+import database
 
 
 class HabitTracker(QWidget):
@@ -9,12 +10,14 @@ class HabitTracker(QWidget):
         super().__init__()
 
         self.habits = []
+        self.visible_habits = []
 
         self.setWindowTitle("My Habits")
         self.setFixedSize(500, 550)
         self.setStyleSheet("background-color: #F4F5F7;")
 
         self.create_interface()
+        self.refresh_habits()
 
     def create_interface(self):
         # Заголовок
@@ -78,6 +81,13 @@ class HabitTracker(QWidget):
 
         self.setLayout(layout)
 
+    # Загрузка привычек из базы данных
+    def refresh_habits(self):
+        self.habits = database.get_habits()
+        self.filter_habits()
+        self.update_counter()
+
+    # Добавление привычки
     def add_habit(self):
         name = self.entry.text().strip()
 
@@ -89,13 +99,12 @@ class HabitTracker(QWidget):
             )
             return
 
-        self.habits.append(name)
+        database.add_habit(name)
 
         self.entry.clear()
+        self.refresh_habits()
 
-        self.filter_habits()
-        self.update_counter()
-
+    # Отметка выполнения
     def mark_done(self):
         selected = self.habit_list.currentRow()
 
@@ -107,14 +116,12 @@ class HabitTracker(QWidget):
             )
             return
 
-        name = self.habits[selected]
+        habit_id = self.visible_habits[selected][0]
 
-        if not name.startswith("✓"):
-            self.habits[selected] = "✓ " + name
+        database.mark_done(habit_id)
+        self.refresh_habits()
 
-        self.filter_habits()
-        self.update_counter()
-
+    # Удаление привычки
     def delete_habit(self):
         selected = self.habit_list.currentRow()
 
@@ -126,29 +133,36 @@ class HabitTracker(QWidget):
             )
             return
 
-        self.habits.pop(selected)
+        habit_id = self.visible_habits[selected][0]
 
-        self.filter_habits()
-        self.update_counter()
+        database.delete_habit(habit_id)
+        self.refresh_habits()
 
+    # Обновление счётчика
     def update_counter(self):
         total = len(self.habits)
-        done = sum(1 for habit in self.habits if habit.startswith("✓"))
+        done = sum(1 for habit in self.habits if habit[2] == 1)
 
         self.counter_label.setText(
             f"Выполнено: {done} из {total}"
         )
 
-    # Функция фильтрации привычек
-
+    # Фильтрация привычек
     def filter_habits(self):
         self.habit_list.clear()
+        self.visible_habits = []
 
         for habit in self.habits:
-            if self.filter_checkbox.isChecked() and habit.startswith("✓"):
+            if self.filter_checkbox.isChecked() and habit[2] == 1:
                 continue
 
-            self.habit_list.addItem(habit)
+            name = habit[1]
+
+            if habit[2] == 1:
+                name = "✓ " + name
+
+            self.habit_list.addItem(name)
+            self.visible_habits.append(habit)
 
 
 app = QApplication(sys.argv)
