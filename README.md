@@ -90,20 +90,35 @@ A project focused on developing desktop applications in Python using two differe
 
 The project features two implementations of a simple Habit Tracker application called **My Habits**. Both applications allow users to manage their daily habits through a graphical user interface.
 
+
 ### Main features
 
 - **Habit Management** — adding new habits to a personal list.
 - **Habit Tracking** — marking habits as completed.
 - **Habit Deletion** — removing selected habits from the list.
 - **Progress Counter** — displaying the number of completed habits and the total number of habits.
+- **Habit Filtering** — displaying only incomplete habits using a checkbox.
+- **Data Persistence** — saving habits and their completion status in an SQLite database.
 - **Input Validation** — checking that the habit name is not empty.
 - **Dialog Windows** — displaying informational messages and warnings.
 
-### Technologies
+### Database Integration
 
-- Python
-- Tkinter
-- PyQt6
+The PyQt6 version of the application is integrated with an **SQLite** database to store habit information.
+
+The database consists of two related tables:
+
+- **habits** — stores habit IDs, names, and completion statuses.
+- **categories** — stores categories associated with habits and references them through a foreign key.
+
+The relationship between the tables is implemented using a foreign key (`habit_id`).
+
+The application supports:
+- Adding new habits to the database.
+- Retrieving saved habits when the application starts.
+- Updating habit completion status.
+- Deleting habits and their related category records.
+
 
 ### GUI Components
 
